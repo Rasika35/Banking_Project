@@ -22,9 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('bankingapp.urls')),
 
-    url(r'^media/(?P<path>,*)$', serve,{'document_root':
-    settings.MEDIA_ROOT}),
-    url(r'^STATIC/(?P<path>,*)$', serve,{'document_root':
-    settings.STATIC_ROOT}),
-
+   
 ]
