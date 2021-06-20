@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+  <style>
+      hr.new1 {
+            border-top: 2px solid black;
+            margin-left: 8px;
+            alignment: center;
+             position: relative;
+            top: 155px;
+        }
+      table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+        border-spacing: 5px;
+        background-color: floralwhite;
+        }
+        th, td {
+        padding: 16px;
+         }
+        .img{
+            position: absolute;
+            alignment: left;
+            top: -38px;
+            left: 0px;
+        }
+         .bg{
+            position: fixed;
+            width: 1024px;
+        }
+        .customer {
+            position: absolute;
+            alignment: center;
+            text-align: center;
+            top: 180px;
+            left: 210px;
+        }
+
+        .table {
+            position: absolute;
+            margin-left: 400px;
+            text-align: center;
+            top: 230px;
+            left: 30px;
+        }
+        .navbar-nav{
+            position: relative;
+            margin-left:0;
+            top: 50px;
+            text-align: right;
+            alignment: right;
+        }
+        .title{
+            position: absolute;
+            margin-left: 500px;
+            top: -5px;
+        }
+        .details{
+            position: relative;
+            margin-left:0;
+            top: 100px;
+            text-align: center;
+            alignment: center;
+        }
+   </style>
+</head>
+<body>
+    <div class="bg">
+  <img src="/static/Img/bag8.png" height="1080" width="1550" >
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+        <div class="img">
+        <img src="/static/Img/logo.png" height="225" width="225" >
+        </div>
+    </nav>
+    <hr class="new1">
+    <div class="title">
+            <h1 style=" color: firebrick;font-family: Bahnschrift, Serif; font-size: 75px">National Bank</h1>
+        </div>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a style=" color: black;font-family: Bahnschrift, Serif; font-weight: bold; font-size: x-large; text-decoration: none" class="nav-item nav-link active" href="{% url 'homepage' %}" id="nav-home">Home &#127968; </a>
+                    &nbsp; &nbsp;
+                    <a style=" color: black;font-family: Bahnschrift, Serif; font-weight: bold; font-size: x-large; text-decoration: none" class="nav-item nav-link" href="{% url 'view_all_customers' %}" id="nav-create">View Customers &#128221;</a>
+                </div>
+    </div>
+    <div class="details">
+        <h2 style="font-family: Bahnschrift, Seri; font-weight: bolder;font-size: xx-large">Account Holder Details</h2>
+    </div>
+
+<h1>{{ customer.customer_name }}`s account</h1>
+
+<div class="table">
+<table style=" font-family: Bahnschrift, Serif; width:50%" border=1">
+   </div
+  <tr>
+    <th>Bank Name</th>
+    <th>Branch Name</th>
+    <th>Customer Name</th>
+    <th>Customer Email</th>
+    <th>Account Number</th>
+    <th>Current Balance</th>
+  </tr>
+
+  <tr>
+    <td>{{ customer.bank_name }}</td>
+    <td>{{ customer.branch }}</td>
+    <td>{{ customer.customer_name }}</td>
+    <td>{{ customer.email }}</td>
+    <td>{{ customer.account_no }}</td>
+    <td>{{ customer.current_balance }}</td>
+  </tr>
+</table>
+         <div class="customer">
+            <strong> <a href="{% url 'transfer_money' customer.pk %}"><button style=" font-family: Bahnschrift, Serif; font-size:x-large; text-align: center; font-weight: bold; alignment: center; background-color: honeydew" class="btn btn-primary btn-block" id="acc"> <i class="fa fa-user"></i> Transfer Money </button
+</body>
+</html>

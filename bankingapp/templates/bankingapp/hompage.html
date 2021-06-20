@@ -1,0 +1,112 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/common.css">
+    <style>
+        hr.new1 {
+            border-top: 2px solid black;
+            margin-left: 8px;
+            alignment: center;
+             position: relative;
+            top: 155px;
+        }
+        .bg{
+            position: fixed;
+            width: 1024px;
+        }
+        .img {
+            position: absolute;
+            alignment: left;
+            top: -35px;
+            left: 0px;
+        }
+
+            .next{
+                position: absolute;
+            margin-left: 415px;
+            text-align: center;
+            top: 225px;
+            left: 5px;
+            }
+        .container {
+            position: absolute;
+            margin-left: 420px;
+            text-align: center;
+            top: 200px;
+            left: 5px;
+        }
+        .navbar-nav{
+            position: relative;
+            margin-left:0;
+            top: 60px;
+            text-align: right;
+            alignment: right;
+        }
+
+        .view {
+            position: absolute;
+            margin-left: 590px;
+            text-align: center;
+            top: 380px;
+            left: 10px;
+        }
+        .title{
+            position: absolute;
+            margin-left: 450px;
+            top: -15px;
+        }
+
+
+    </style>
+</head>
+{% block bodycontent %}
+<body>
+    <div class="bg">
+  <img src="/static/Img/bag8.png" height="1080" width="1550" >
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+        <div class="img">
+        <img src="/static/Img/logo.png" height="225" width="225" >
+        </div>
+            <hr class="new1">
+ </div>
+
+        <div class="title">
+            <h1 style=" color: firebrick;font-family: Bahnschrift, Serif; font-size: 75px">National Bank</h1>
+        </div>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a style="color: black;font-family: Bahnschrift, Serif; font-weight: bold; font-size: x-large; text-decoration: none" class="nav-item nav-link active" href="{% url 'homepage' %}" id="nav-home">Home &#127968; </a>
+                    &nbsp; &nbsp;
+                    <a style=" color: black; font-family: Bahnschrift, Serif; font-weight: bold; font-size: x-large; text-decoration: none" class="nav-item nav-link" href="{% url 'view_all_customers' %}" id="nav-create">View Customers &#128221;</a>
+                </div>
+    </div>
+    <br> <br> <br>
+        </nav>
+        <div class="container">
+           <b>  <div style=" color: black;font-family: Bahnschrift, Serif; font-size: 50px; text-align: center; margin: auto">Welcome to National Bank</div> </b>
+                </div>
+     <div class="next">
+            <h4 style= "font-family: Bahnschrift, Serif;  font-size: 40px; text-align: center; color: darkblue"> We Do Not Delay Your Transaction </h4>
+        </div>
+            <div class="view">
+                <b> <a  href="{% url 'view_all_customers' %}"> <button style=" font-family: Bahnschrift, Serif; font-size:x-large; text-align: center; font-weight: bold; alignment: center; background-color: honeydew" class="btn btn-primary btn-block" id="acc"><i class="fa fa-user"></i> view all customers </button></a> </b>
+        </div>
+        </br>
+
+{% endblock %}
+<!-- FOOTER -->
+        <section class="foot bg-success text-white">
+            <div class="text-center">
+                &copy; Website created with <i class="fa fa-heart" style="color: red;"></i> by <a href="https://itsourcecode.com/rafi007akhtar" target="_blank">Itsourcecode</a>
+                <br>
+                <i></i><a>&copy; Bank Management System 2021</a>
+            </div>
+        </section>
+</body>
+</html>

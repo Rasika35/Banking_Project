@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Customers</title>
+  <style>
+    hr.new1 {
+            border-top: 2px solid black;
+            margin-left: 8px;
+            alignment: center;
+             position: relative;
+            top: 155px;
+        }
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+        border-spacing: 5px;
+        background-color: floralwhite;
+        }
+        th, td {
+        padding: 12px;
+        }
+
+
+        .bg{
+            position: fixed;
+            width: 1024px;
+        }
+        .customer {
+            position: absolute;
+            margin-left: 535px;
+            top: 145px;
+            left: 10px;
+        }
+
+        .table {
+            position: absolute;
+            margin-left: 450px;
+            text-align: center;
+            top: 235px;
+            left: 50px;
+        }
+
+        .img {
+            position: absolute;
+            alignment: left;
+            top: -35px;
+            left: 0px;
+        }
+         .navbar-nav{
+            position: relative;
+            margin-left:0;
+            top: 50px;
+            text-align: right;
+            alignment: right;
+        }
+         .title{
+            position: absolute;
+            margin-left: 495px;
+            top: -5px;
+        }
+    </style>
+</head>
+<body>
+ <div class="bg">
+  <img src="/static/Img/bag8.png" height="1080" width="1550" >
+    </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+        <div class="img">
+        <img src="/static/Img/logo.png" height="225" width="225" >
+        </div>
+        <hr class="new1">
+        </nav>
+        </div>
+        <div class="title">
+            <h1 style=" color: firebrick;font-family: Bahnschrift, Serif; font-size: 75px">National Bank</h1>
+        </div>
+
+ <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a style="color: black; font-family: Bahnschrift, Serif; font-weight: bold; font-size: x-large; text-decoration: none" class="nav-item nav-link active" href="{% url 'homepage' %}" id="nav-home">Home &#127968; </a>
+                    &nbsp; &nbsp;
+                    <a style="color: black; font-family: Bahnschrift, Serif; font-weight: bold; font-size: x-large; text-decoration: none" class="nav-item nav-link" href="{% url 'view_all_customers' %}" id="nav-create">View Customers &#128221;</a>
+                </div>
+    </div>
+
+ <div class="customer">
+<h1 style=" font-family: Bahnschrift, Serif; font-weight: bold; font-size: xxx-large"> All customers List</h1>
+</div>
+ <div class="table">
+<table style=" font-family: Bahnschrift, Serif; width:100%; alignment: center" border=1>
+  <tr>
+    <th>Customer Name</th>
+    <th>Account Number</th>
+    <th>Current Balance</th>
+    <th>View</th>
+  </tr>
+</div>
+{% for customer in customers %}
+  <tr>
+    <td>{{ customer.customer_name }}</td>
+    <td>{{ customer.account_no }}</td>
+    <td>{{ customer.current_balance }}</td>
+    <td> <a  href="{% url 'customer_detail' customer.pk %}">view</a> </td>
+  </tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
